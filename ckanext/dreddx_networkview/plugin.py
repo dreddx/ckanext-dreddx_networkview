@@ -16,14 +16,17 @@ class NetworkView(plugins.SingletonPlugin):
         toolkit.add_resource('fanstatic', 'dreddx_networkview')
 
     def info(self):
-        return {'name': 'networkview',
-                'title': 'Network',
-                'icon': 'connectdevelop',
-                'iframed': False,
-                'filterable': False,
-                'schema': {},
-                }
+        return {
+            'name': 'networkview',
+            'title': 'Network',
+            'icon': 'connectdevelop',
+            'iframed': False,
+            'filterable': False,
+            'schema': {},
+        }
 
+    def can_view(self):
+        return True
 
     def view_template(self):
         return 'networkview_base.html'
