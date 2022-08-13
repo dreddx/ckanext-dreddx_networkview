@@ -28,5 +28,5 @@ class NetworkView(plugins.SingletonPlugin):
     def can_view(self, data_dict):
         return True
 
-    def view_template(self, data_dict):
+    def view_template(self, context, data_dict):
         return 'networkview_base.html'
