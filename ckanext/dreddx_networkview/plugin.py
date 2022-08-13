@@ -7,6 +7,9 @@ class NetworkView(plugins.SingletonPlugin):
     plugins.implements(plugins.IResourceView, inherit=True)
     plugins.implements(plugins.ITemplateHelpers)
 
+    def get_helpers(self):
+        return {}
+
     def update_config(self, config):
         toolkit.add_template_directory(config, 'theme/templates')
         toolkit.add_public_directory(config, 'public')
