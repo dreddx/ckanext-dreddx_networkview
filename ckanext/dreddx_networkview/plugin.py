@@ -1,10 +1,16 @@
-import ckan.plugins as p
+import ckan.plugins as plugins
+import ckan.plugins.toolkit as toolkit
 
-class NetworkView(p.SingletonPlugin):
+class NetworkView(plugins.SingletonPlugin):
 
-    p.implements(p.IConfigurer, inherit=True)
-    p.implements(p.IResourceView, inherit=True)
-    p.implements(p.ITemplateHelpers)
+    plugins.implements(plugins.IConfigurer, inherit=True)
+    plugins.implements(plugins.IResourceView, inherit=True)
+    plugins.implements(plugins.ITemplateHelpers)
+
+    def update_config(self, config):
+        toolkit.add_template_directory(config, 'theme/templates')
+        toolkit.add_public_directory(config, 'public')
+        toolkit.add_resource('fanstatic', 'dreddx_networkview')
 
     def view_template(self):
         return 'networkview_base.html'

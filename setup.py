@@ -35,6 +35,6 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points='''
         [ckan.plugins]
-        networkview=ckanext.dreddx_networkview.plugin:NetworkView
+        dreddx_networkview=ckanext.dreddx_networkview.plugin:NetworkView
     ''',
 )
