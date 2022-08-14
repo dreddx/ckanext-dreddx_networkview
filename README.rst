@@ -20,7 +20,7 @@ To install ckanext-dreddx_networkview:
 
 Configure CKAN
 
-1. Add ``networkview`` to the ``ckan.plugins`` setting in your CKAN
+1. Add ``dreddx_networkview`` to the ``ckan.plugins`` setting in your CKAN
    config file
 
 2. Restart CKAN
